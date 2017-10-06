@@ -8,4 +8,3 @@ Definition : Given a source domain Ds and a learning task Ts, a target domain Dt
 
 A good explanation of how to use transfer learning practically is explained in http://cs231n.github.io/transfer-learning/
 
-The vggface model weights is loaded as such without including the last layers by calling

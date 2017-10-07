@@ -8,7 +8,8 @@ Definition : Given a source domain Ds and a learning task Ts, a target domain Dt
 
 A good explanation of how to use transfer learning practically is explained in http://cs231n.github.io/transfer-learning/
 
-When and how to fine-tune? How do you decide what type of transfer learning you should perform on a new dataset?
+##When and how to fine-tune? 
+How do you decide what type of transfer learning you should perform on a new dataset?
 This is a function of several factors, but the two most important ones are the size of the new dataset (small or big), and its similarity
 to the original dataset (e.g. ImageNet-like in terms of the content of images and the classes, or very different, such as microscope images).
 Keeping in mind that ConvNet features are more generic in early layers and more original-dataset-specific in later layers, 

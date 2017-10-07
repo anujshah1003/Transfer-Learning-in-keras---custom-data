@@ -1,6 +1,7 @@
 # Transfer-Learning-in-keras---custom-data
 
 The video tutrial for this post is at : https://www.youtube.com/watch?v=L7qjQu2ry2Q&feature=youtu.be
+
 This repository shows how we can use transfer learning in keras with the example of training a 4 class classification model using VGG-16 and Resnet-50 pre-trained weights.The vgg-16 and resnet-50 are the CNN models trained on more than a million images of 1000 different categories.
 
 Transfer learning refers to the technique of using knowledge of one domain to another domain.i.e. a NN model trained on one dataset can be used for other dataset by fine-tuning the former network.

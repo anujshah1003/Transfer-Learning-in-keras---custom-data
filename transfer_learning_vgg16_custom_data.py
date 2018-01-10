@@ -4,7 +4,8 @@ import os
 import time
 from vgg16 import VGG16
 from keras.preprocessing import image
-from imagenet_utils import preprocess_input, decode_predictions
+from keras.applications.imagenet_utils import preprocess_input
+from imagenet_utils import decode_predictions
 from keras.layers import Dense, Activation, Flatten
 from keras.layers import merge, Input
 from keras.models import Model
@@ -33,7 +34,7 @@ for dataset in data_dir_list:
 	img_list=os.listdir(data_path+'/'+ dataset)
 	print ('Loaded the images of dataset-'+'{}\n'.format(dataset))
 	for img in img_list:
-		img_path = data_path + '/'+ dataset + '/'+ img 
+		img_path = data_path + '/'+ dataset + '/'+ img
 		img = image.load_img(img_path, target_size=(224, 224))
 		x = image.img_to_array(img)
 		x = np.expand_dims(x, axis=0)
@@ -62,7 +63,7 @@ labels[404:606]=2
 labels[606:]=3
 
 names = ['cats','dogs','horses','humans']
-	  
+
 # convert class labels to on-hot encoding
 Y = np_utils.to_categorical(labels, num_classes)
 

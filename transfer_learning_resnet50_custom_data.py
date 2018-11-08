@@ -78,8 +78,8 @@ image_input = Input(shape=(224, 224, 3))
 model = ResNet50(input_tensor=image_input, include_top=True,weights='imagenet')
 model.summary()
 last_layer = model.get_layer('avg_pool').output
-x= Flatten(name='flatten')(last_layer)
-out = Dense(num_classes, activation='softmax', name='output_layer')(x)
+#x= Flatten(name='flatten')(last_layer)
+out = Dense(num_classes, activation='softmax', name='output_layer')(last_layer)
 custom_resnet_model = Model(inputs=image_input,outputs= out)
 custom_resnet_model.summary()
 

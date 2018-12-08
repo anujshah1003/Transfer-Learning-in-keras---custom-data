@@ -105,8 +105,8 @@ custom_resnet_model.compile(loss='categorical_crossentropy',optimizer='adam',met
 
 ###### please install pydot with pip install pydot and download graphwiz from website :https://graphviz.gitlab.io/_pages/Download/Download_windows.html
 ####add graphwiz path to visualize model graph. No need for now.
-os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin/'
-plot_model(custom_resnet_model, to_file='outputs/model1_plot.png', show_shapes=True, show_layer_names=True)
+#os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin/'
+#plot_model(custom_resnet_model, to_file='outputs/model1_plot.png', show_shapes=True, show_layer_names=True)
 
 
 # callback for tensorboard integration
@@ -172,8 +172,8 @@ custom_resnet_model2.compile(loss='categorical_crossentropy',optimizer='adam',me
 
 ###### please install pydot with pip install pydot and download graphwiz from website :https://graphviz.gitlab.io/_pages/Download/Download_windows.html
 ####add graphwiz path to visualize model graph. No need for now.
-os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin/'
-plot_model(custom_resnet_model2, to_file='outputs/model2_plot.png', show_shapes=True, show_layer_names=True)
+#os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin/'
+#plot_model(custom_resnet_model2, to_file='outputs/model2_plot.png', show_shapes=True, show_layer_names=True)
 
 
 # callback for tensorboard integration

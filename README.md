@@ -1,4 +1,4 @@
-# Transfer-Learning-in-keras---custom-data
+# Transfer Learning in Python using custom-data and VGG16 & Resnet50 networks
 
 The video tutorial for Transfer learning with VGG-16 : https://www.youtube.com/watch?v=L7qjQu2ry2Q&feature=youtu.be
 
@@ -38,8 +38,8 @@ pretrained model. In this case, we would have enough data and confidence to fine
 
 * MODEL1
 
-- Training results
-
+Training results
+```
 Epoch 1/12
 646/646 [==============================] - 51s 79ms/step - loss: 0.6835 - acc: 0.7446 - val_loss: 0.2666 - val_acc: 0.9012
 Epoch 2/12
@@ -68,10 +68,12 @@ Epoch 12/12
 
 - Evaluate results
 [INFO] loss=0.0975, accuracy: 96.2963%
-
+```
 
 * MODEL2
 
+Training results
+```
 Total params: 24,769,156
 Trainable params: 24,716,036
 Non-trainable params: 53,120
@@ -103,5 +105,18 @@ Epoch 12/12
 646/646 [==============================] - 46s 72ms/step - loss: 0.0552 - acc: 0.9799 - val_loss: 0.0790 - val_acc: 0.9877
 Training time: -557.5128879547119
 162/162 [==============================] - 12s 71ms/step
+
 [INFO] loss=0.0790, accuracy: 98.7654%
 model2 resaved.
+```
+
+* Prediction Result for Resnet50 after 20 epoch:
+
+```
+Loading image: ./predict_this/cat2.jpg
+1/1 [==============================] - 0s 140ms/step
+Found class from prediction: cats  accuracy%: 99.99356269836426
+
+percentages of classes: [9.9993563e-01 6.1858686e-05 5.1179603e-07 1.9930824e-06]
+All of the classes: ['cats', 'dogs', 'horses', 'humans']
+```

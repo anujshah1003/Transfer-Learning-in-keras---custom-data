@@ -1,4 +1,4 @@
-data/*
 *__pycache__*
-trained_models/*
+trained_models/*.h5
 logs/*
+outputs/*

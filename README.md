@@ -1,4 +1,4 @@
-# Transfer-Learning-in-keras---custom-data
+# Transfer Learning in Python using custom-data and VGG16 & Resnet50 networks
 
 The video tutorial for Transfer learning with VGG-16 : https://www.youtube.com/watch?v=L7qjQu2ry2Q&feature=youtu.be
 
@@ -35,3 +35,88 @@ earlier in the network.
 	New dataset is large and very different from the original dataset. Since the dataset is very large, we may expect that we can 
 afford to train a ConvNet from scratch. However, in practice it is very often still beneficial to initialize with weights from a 
 pretrained model. In this case, we would have enough data and confidence to fine-tune through the entire network.
+
+* MODEL1
+
+Training results
+```
+Epoch 1/12
+646/646 [==============================] - 51s 79ms/step - loss: 0.6835 - acc: 0.7446 - val_loss: 0.2666 - val_acc: 0.9012
+Epoch 2/12
+646/646 [==============================] - 45s 70ms/step - loss: 0.1500 - acc: 0.9505 - val_loss: 0.1744 - val_acc: 0.9506
+Epoch 3/12
+646/646 [==============================] - 45s 70ms/step - loss: 0.0726 - acc: 0.9814 - val_loss: 0.1513 - val_acc: 0.9444
+Epoch 4/12
+646/646 [==============================] - 45s 70ms/step - loss: 0.0549 - acc: 0.9938 - val_loss: 0.1335 - val_acc: 0.9568
+Epoch 5/12
+646/646 [==============================] - 45s 70ms/step - loss: 0.0511 - acc: 0.9892 - val_loss: 0.1186 - val_acc: 0.9691
+Epoch 6/12
+646/646 [==============================] - 45s 70ms/step - loss: 0.0443 - acc: 0.9876 - val_loss: 0.1146 - val_acc: 0.9630
+Epoch 7/12
+646/646 [==============================] - 46s 71ms/step - loss: 0.0327 - acc: 0.9969 - val_loss: 0.1096 - val_acc: 0.9691
+Epoch 8/12
+646/646 [==============================] - 46s 71ms/step - loss: 0.0244 - acc: 0.9985 - val_loss: 0.1204 - val_acc: 0.9691
+Epoch 9/12
+646/646 [==============================] - 46s 71ms/step - loss: 0.0287 - acc: 0.9985 - val_loss: 0.0902 - val_acc: 0.9691
+Epoch 10/12
+646/646 [==============================] - 46s 71ms/step - loss: 0.0192 - acc: 1.0000 - val_loss: 0.1027 - val_acc: 0.9630
+Epoch 11/12
+646/646 [==============================] - 47s 72ms/step - loss: 0.0191 - acc: 1.0000 - val_loss: 0.1018 - val_acc: 0.9691
+Epoch 12/12
+646/646 [==============================] - 46s 72ms/step - loss: 0.0201 - acc: 0.9969 - val_loss: 0.0975 - val_acc: 0.9630
+
+
+- Evaluate results
+[INFO] loss=0.0975, accuracy: 96.2963%
+```
+
+* MODEL2
+
+Training results
+```
+Total params: 24,769,156
+Trainable params: 24,716,036
+Non-trainable params: 53,120
+__________________________________________________________________________________________________
+Train on 646 samples, validate on 162 samples
+Epoch 1/12
+646/646 [==============================] - 47s 73ms/step - loss: 0.7344 - acc: 0.7043 - val_loss: 0.4553 - val_acc: 0.8951
+Epoch 2/12
+646/646 [==============================] - 47s 73ms/step - loss: 0.2434 - acc: 0.9211 - val_loss: 0.2483 - val_acc: 0.9259
+Epoch 3/12
+646/646 [==============================] - 47s 73ms/step - loss: 0.1677 - acc: 0.9474 - val_loss: 0.2066 - val_acc: 0.9506
+Epoch 4/12
+646/646 [==============================] - 46s 72ms/step - loss: 0.1346 - acc: 0.9613 - val_loss: 0.0861 - val_acc: 0.9815
+Epoch 5/12
+646/646 [==============================] - 46s 72ms/step - loss: 0.1219 - acc: 0.9613 - val_loss: 0.1871 - val_acc: 0.9691
+Epoch 6/12
+646/646 [==============================] - 46s 71ms/step - loss: 0.1395 - acc: 0.9505 - val_loss: 0.1141 - val_acc: 0.9753
+Epoch 7/12
+646/646 [==============================] - 46s 71ms/step - loss: 0.0771 - acc: 0.9768 - val_loss: 0.1111 - val_acc: 0.9815
+Epoch 8/12
+646/646 [==============================] - 46s 72ms/step - loss: 0.1321 - acc: 0.9628 - val_loss: 0.1067 - val_acc: 0.9630
+Epoch 9/12
+646/646 [==============================] - 46s 72ms/step - loss: 0.1422 - acc: 0.9582 - val_loss: 0.0939 - val_acc: 0.9877
+Epoch 10/12
+646/646 [==============================] - 46s 72ms/step - loss: 0.0446 - acc: 0.9861 - val_loss: 0.0875 - val_acc: 0.9815
+Epoch 11/12
+646/646 [==============================] - 46s 72ms/step - loss: 0.0419 - acc: 0.9861 - val_loss: 0.1241 - val_acc: 0.9815
+Epoch 12/12
+646/646 [==============================] - 46s 72ms/step - loss: 0.0552 - acc: 0.9799 - val_loss: 0.0790 - val_acc: 0.9877
+Training time: -557.5128879547119
+162/162 [==============================] - 12s 71ms/step
+
+[INFO] loss=0.0790, accuracy: 98.7654%
+model2 resaved.
+```
+
+* Prediction Result for Resnet50 after 20 epoch:
+
+```
+Loading image: ./predict_this/cat2.jpg
+1/1 [==============================] - 0s 140ms/step
+Found class from prediction: cats  accuracy%: 99.99356269836426
+
+percentages of classes: [9.9993563e-01 6.1858686e-05 5.1179603e-07 1.9930824e-06]
+All of the classes: ['cats', 'dogs', 'horses', 'humans']
+```

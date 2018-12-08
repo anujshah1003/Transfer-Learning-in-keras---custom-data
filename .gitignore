@@ -1,0 +1,4 @@
+*__pycache__*
+trained_models/*.h5
+logs/*
+outputs/*

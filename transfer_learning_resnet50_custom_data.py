@@ -2,16 +2,16 @@
 import numpy as np
 import os
 import time
-from resnet50 import ResNet50
+from keras.applications.resnet50 import ResNet50
 from keras.preprocessing import image
 from keras.layers import GlobalAveragePooling2D, Dense, Dropout,Activation,Flatten
+from keras.applications.imagenet_utils import preprocess_inputs
 
-from imagenet_utils import preprocess_input
 from keras.layers import Input
 from keras.models import Model
 from keras.utils import np_utils
 from sklearn.utils import shuffle
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 
 img_path = 'elephant.jpg'
 img = image.load_img(img_path, target_size=(224, 224))
@@ -78,8 +78,8 @@ image_input = Input(shape=(224, 224, 3))
 model = ResNet50(input_tensor=image_input, include_top=True,weights='imagenet')
 model.summary()
 last_layer = model.get_layer('avg_pool').output
-x= Flatten(name='flatten')(last_layer)
-out = Dense(num_classes, activation='softmax', name='output_layer')(x)
+#x= Flatten(name='flatten')(last_layer)
+out = Dense(num_classes, activation='softmax', name='output_layer')(last_layer)
 custom_resnet_model = Model(inputs=image_input,outputs= out)
 custom_resnet_model.summary()
 

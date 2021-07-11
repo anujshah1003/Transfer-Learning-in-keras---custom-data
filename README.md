@@ -1,3 +1,5 @@
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/anujshah645)
+
 # Transfer-Learning-in-keras---custom-data
 for the compatible version with keras-2 and other issues you can have a look at the corrections made by people in pull request, and also this page - https://github.com/kusiwu/Transfer-Learning-in-keras---custom-data
 I am not changing here as it is compatible with versions i have metioned in the tutorial

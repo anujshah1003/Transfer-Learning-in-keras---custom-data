@@ -32,7 +32,7 @@ relevant to this dataset as well. Hence, the best idea might be to train a linea
 overfit if we were to try to fine-tune through the full network.
 
 	New dataset is small but very different from the original dataset. Since the data is small, it is likely best to only train a 
-linear classifier. Since the dataset is very different, it might not be best to train the classifier form the top of the network, 
+linear classifier. Since the dataset is very different, it might not be best to train the classifier from the top of the network, 
 which contains more dataset-specific features. Instead, it might work better to train the SVM classifier from activations somewhere 
 earlier in the network.
 
